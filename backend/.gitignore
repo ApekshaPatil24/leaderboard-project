@@ -1,13 +1,2 @@
-# Node modules
-node_modules/
-
-# Environment variables
 .env
-/backend/.env
-
-# Logs
-logs
-*.log
-
-# Misc
-.DS_Store
+/backend/node_modules/
