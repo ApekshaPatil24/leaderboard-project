@@ -7,7 +7,7 @@ function History() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/claim/history');
+      const res = await axios.get('https://leaderboard-backend-lyr0.onrender.com/api/claim/history');
       
       // ✅ Sort by createdAt descending (latest first)
       const sorted = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

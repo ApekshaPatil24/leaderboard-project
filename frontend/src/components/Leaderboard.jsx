@@ -14,7 +14,7 @@ function Leaderboard() {
 
    // Gets sorted user ranking data
   const fetchLeaderboard = async () => {
-    const res = await axios.get('http://localhost:5000/api/claim/leaderboard');
+    const res = await axios.get('https://leaderboard-backend-lyr0.onrender.com/api/claim/leaderboard');
     setRankings(res.data);
   };
 

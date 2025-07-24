@@ -17,13 +17,13 @@ function ClaimPoints() {
 
     // Load all users
   const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:5000/api/users');
+    const res = await axios.get('https://leaderboard-backend-lyr0.onrender.com/api/users');
     setUsers(res.data);
   };
 
    // Load current leaderboard (sorted by total points)
   const fetchLeaderboard = async () => {
-    const res = await axios.get('http://localhost:5000/api/claim/leaderboard');
+    const res = await axios.get('https://leaderboard-backend-lyr0.onrender.com/api/claim/leaderboard');
     setBoard(res.data);
   };
 
@@ -60,7 +60,7 @@ function ClaimPoints() {
 
     try {
        // Claim API returns random points (1–10)
-      const res = await axios.post(`http://localhost:5000/api/claim/${selectedId}`);
+      const res = await axios.post(`https://leaderboard-backend-lyr0.onrender.com/api/claim/${selectedId}`);
       const gained = res.data.points;
       const newTotal = prevTotal + gained; 
       await fetchLeaderboard();// Update leaderboard after claim

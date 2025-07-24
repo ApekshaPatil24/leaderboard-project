@@ -17,7 +17,7 @@ function AddUser() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/users', { name });
+      await axios.post('https://leaderboard-backend-lyr0.onrender.com/api/users', { name });
       setName('');
       setStatus({ type: 'success', message: `✅ "${name}" added successfully!` });
       fetchUsers();
@@ -32,7 +32,7 @@ function AddUser() {
   // Gets all users with their totalPoints
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/claim/leaderboard'); // gets name + totalPoints
+      const res = await axios.get('https://leaderboard-backend-lyr0.onrender.com/api/claim/leaderboard'); // gets name + totalPoints
       setUsers(res.data.reverse()); // Reverse for recent-first
     } catch (err) {
       console.error('Failed to fetch users');
